@@ -95,7 +95,7 @@ done
 echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" $totalNum   
 if [ $totalNum -eq 9 ];
 then
-   
+         rm -f /usr/java/jdk1.7.0_79/jre/lib/ext/SocketServer-0.0.1-SNAPSHOT.jar
 	 cp -f /root/.jenkins/workspace/ffg_cargo_git/cargosample-parent/SocketServer/target/SocketServer-0.0.1-SNAPSHOT.jar /usr/java/jdk1.7.0_79/jre/lib/ext
 	 echo $?
 	 java -Xms50m -Xmx250m startcontrol.SocketServer >> /usr/ffg_server/logout1.txt &
