@@ -13,5 +13,5 @@ if [ $b1 \> 0  ]
 then
         kill -9 `ps -ef | grep 'startcontrol.STlistServer ' | grep -v 'grep'|awk '{print $2}'`
 else
-        echo "No SockectServers need to be killed"
+        echo "No STsockectServers need to be killed"
 fi
