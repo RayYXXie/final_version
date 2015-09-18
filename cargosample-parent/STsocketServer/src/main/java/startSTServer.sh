@@ -64,7 +64,7 @@ done
 
 while true ;
 do
-   result7=`curl -w "\n"%{http_code}"\n" http://192.168.4.37:18080/STsocketClient/index.jsp|grep 200`
+   result7=`curl -w "\n"%{http_code}"\n" http://192.168.4.37:8080/STsocketClient/index.jsp|grep 200`
    if [ ! -z $result7 ] && [ $result7 -eq 200 ];
    then
         let totalNum=$totalNum+1
