@@ -39,9 +39,9 @@ public class HttpClientHandler4X {
 		try {
 			
 			
-			String dataId = object.getDataId() == null ? "A" : object.getDataId();
+			String dataId = object.getDataId() == null ? "1" : object.getDataId();
 			String url = object.getCxfUrl() + "/" + dataId+ "/df/df/20150808/dfdfdf";
-			
+			System.out.println(url);
 			// ����httpget
 			HttpGet httpget = new HttpGet(url);
 			HttpResponse response = null;
