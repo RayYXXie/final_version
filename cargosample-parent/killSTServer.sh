@@ -8,10 +8,10 @@ else
 fi
 
 
-b1=`ps -ef | grep 'startcontrol.STsocketServer' | grep -v 'grep'|wc -l`
+b1=`ps -ef | grep 'startcontrol.STlistServer ' | grep -v 'grep'|wc -l`
 if [ $b1 \> 0  ]
 then
-        kill -9 `ps -ef | grep 'startcontrol.STsocketServer' | grep -v 'grep'|awk '{print $2}'`
+        kill -9 `ps -ef | grep 'startcontrol.STlistServer ' | grep -v 'grep'|awk '{print $2}'`
 else
         echo "No SockectServers need to be killed"
 fi
