@@ -15,9 +15,12 @@ import startcontrol.SocketClient;
 
 public class HandlerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	static int viewCount = 0;
    	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final String id = request.getParameter("id");
+		viewCount++;
+		System.out.println(" -----------------------------------viewCount-----------------------------------     "+viewCount);
 		System.out.println("id1 00000000 ");
 		response.getWriter().write("hello SocketServer !");
 		response.getWriter().flush();
