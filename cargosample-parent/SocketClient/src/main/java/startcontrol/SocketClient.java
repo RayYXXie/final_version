@@ -13,20 +13,20 @@ import util.ClientSocketHandlerPool;
 
 public class SocketClient{
 
-	//ÓÃÓÚ´æ´¢µ÷Ã¿ÌõCaseµÄ³É¹¦×´Ì¬ 1 ±íÊ¾³É¹¦£¬0±íÊ¾Ê§°Ü
+	//ç”¨äºå­˜å‚¨è°ƒæ¯æ¡Caseçš„æˆåŠŸçŠ¶æ€ 1 è¡¨ç¤ºæˆåŠŸï¼Œ0è¡¨ç¤ºå¤±è´¥
 	public static ConcurrentHashMap <String,String> statusMap = new ConcurrentHashMap<String,String>();
 	
-    //¿Í»§¶Ë¿ªÊ¼Ê±¼ä
+    //å®¢æˆ·ç«¯å¼€å§‹æ—¶é—´
 	static long clientStartTime = System.currentTimeMillis();
-	//×Ü¹²ÒÑ¾­´¦ÀíµÄÊıÄ¿
+	//æ€»å…±å·²ç»å¤„ç†çš„æ•°ç›®
 	static int tempNum = 0;
-	//ĞèÒª´¦ÀíµÄcase×ÜÊıÄ¿
+	//éœ€è¦å¤„ç†çš„caseæ€»æ•°ç›®
 	static int totalNum  = 0;
-	//ÓÃÓÚ¼à¿ØÕû¸öÁ÷³ÌµÄ½ø¶È
+	//ç”¨äºç›‘æ§æ•´ä¸ªæµç¨‹çš„è¿›åº¦
 	public static void processMonitor(){
 		++tempNum;
 		float persent = ((float)tempNum/(float)totalNum)*100;
-		System.out.println("×ÜÌõÊıÎª£º"+totalNum+"  ÒÑ¾­´¦ÀíÌõÊı £º "+tempNum+" ×Ü½ø¶ÈÎª£º"+persent+"%"+"  ÏÖÒÑÓÃÊ±£º"+(System.currentTimeMillis() - clientStartTime));
+		System.out.println("æ€»æ¡æ•°ä¸ºï¼š"+totalNum+"  å·²ç»å¤„ç†æ¡æ•° ï¼š "+tempNum+" æ€»è¿›åº¦ä¸ºï¼š"+persent+"%"+"  ç°å·²ç”¨æ—¶ï¼š"+(System.currentTimeMillis() - clientStartTime));
 	    if(tempNum!=0 &&totalNum==tempNum){
 	    	
 	    	DataBaseMethodHandler handler = new DataBaseMethodHandlerImpl();
@@ -35,7 +35,7 @@ public class SocketClient{
 	    	String sql = "update tb_socketcommunicationconfirm set success_status='1' where id="+id;
 	    	handler.updateSocketComConData(sql);
 	    	handler.closeAll();
-	    	System.out.println("±¾´ÎTestCase³É¹¦ÔËĞĞ!");
+	    	System.out.println("æœ¬æ¬¡TestCaseæˆåŠŸè¿è¡Œ!");
 	    	
 	    }
 	    
@@ -53,9 +53,9 @@ public class SocketClient{
 		try {
 			for (int i = 0; i < list.size(); i++) {
 				
-				//Œ¢Ã¿Ò»DataObjectÊı¾İ½»¸øÏß³ÌÈ¥´¦Àí£¬Í¬Ê±½«Ïß³Ì½»¸øÏß³Ì³ØÈ¥¹ÜÀí
+				//å°‡æ¯ä¸€DataObjectæ•°æ®äº¤ç»™çº¿ç¨‹å»å¤„ç†ï¼ŒåŒæ—¶å°†çº¿ç¨‹äº¤ç»™çº¿ç¨‹æ± å»ç®¡ç†
 				Socket socket = new Socket("127.0.0.1", 7777);
-				socket.setSoTimeout(180000);
+				socket.setSoTimeout(600000);
 				InitialDataObject object = (InitialDataObject) list.get(i);
 				ClientSocketHandlerPool.addSocketToThreadPool(socket, object);
 				
@@ -70,7 +70,7 @@ public class SocketClient{
 	}
 
 	public static void main(String args[]) throws ClassNotFoundException, InterruptedException {
-		//Æô¶¯¿Í»§¶Ë
+		//å¯åŠ¨å®¢æˆ·ç«¯
 		Thread.sleep(2000);
 		SocketClient client = new SocketClient();
 		client.start();
