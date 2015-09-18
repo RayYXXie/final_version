@@ -18,11 +18,13 @@ public class HandlerServlet extends HttpServlet {
    	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final String id = request.getParameter("id");
+		System.out.println("id1 00000000 ");
 		response.getWriter().write("hello SocketServer !");
 		response.getWriter().flush();
 		final DataBaseMethodHandler handler = new DataBaseMethodHandlerImpl();
 		handler.initDBEnvironment();
 		//todo
+                System.out.println("id1 = "+id);
                 System.out.println("id1 = "+id);
 		if(id !=null &&!"".equals(id)){
 			//todo
