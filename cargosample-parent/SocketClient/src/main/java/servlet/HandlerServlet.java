@@ -22,8 +22,11 @@ public class HandlerServlet extends HttpServlet {
 		response.getWriter().flush();
 		final DataBaseMethodHandler handler = new DataBaseMethodHandlerImpl();
 		handler.initDBEnvironment();
-		
-		if(id !=null ||!"".equals(id)){
+		//todo
+                System.out.println("id1 = "+id);
+		if(id !=null &&!"".equals(id)){
+			//todo
+	                System.out.println("id2 = "+id);
 			final int dataId = Integer.parseInt(id);
 			String updateSql = "update tb_socketcommunicationconfirm set communication_status='1' where id="+id;
 			handler.updateSocketComConData(updateSql);
