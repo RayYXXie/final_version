@@ -17,16 +17,16 @@ import dao.DataBaseMethodHandlerImpl;
 
 public class STlistClient {
 
-	// ¿Í»§¶Ë¿ªÊ¼Ê±¼ä
+	// å®¢æˆ·ç«¯å¼€å§‹æ—¶é—´
 	static long clientStartTime = System.currentTimeMillis();
-	// ×Ü¹²ÒÑ¾­´¦ÀíµÄÊıÄ¿
+	// æ€»å…±å·²ç»å¤„ç†çš„æ•°ç›®
 	static int tempNum = 0;
-	// ĞèÒª´¦ÀíµÄcase×ÜÊıÄ¿
+	// éœ€è¦å¤„ç†çš„caseæ€»æ•°ç›®
 	static int totalNum = 0;
 
-	// ÓÃÓÚ¼à¿ØÕû¸öÁ÷³ÌµÄ½ø¶È
+	// ç”¨äºç›‘æ§æ•´ä¸ªæµç¨‹çš„è¿›åº¦
 	public static void processMonitor() {
-		System.out.println(" ×ÜÓÃÊ±£º"+ (System.currentTimeMillis() - clientStartTime));
+		System.out.println(" æ€»ç”¨æ—¶ï¼š"+ (System.currentTimeMillis() - clientStartTime));
 	}
 
 	public void start() throws ClassNotFoundException {
@@ -35,21 +35,21 @@ public class STlistClient {
 		Socket socket = null;
 		try {
 			socket = new Socket("127.0.0.1", 10801);
-			socket.setSoTimeout(180000);
+			socket.setSoTimeout(1800000);
 
-			// ´ÓÊı¾İ¿âÈ¡³öËùÓĞµÄÔ­Éú¶ÔÏó
+			// ä»æ•°æ®åº“å–å‡ºæ‰€æœ‰çš„åŸç”Ÿå¯¹è±¡
 			DataBaseMethodHandler dataHandler = new DataBaseMethodHandlerImpl();
 			dataHandler.initDBEnvironment();
 			List<InitialDataObject> list = dataHandler.fetchAll();
 
-			// ÊäÈë¶ÔÏó flush£¨£©
+			// è¾“å…¥å¯¹è±¡ flushï¼ˆï¼‰
 			oos = new ObjectOutputStream(socket.getOutputStream());
 			oos.writeObject(list);
 			oos.flush();
 			ois = new ObjectInputStream(socket.getInputStream());
 
 			for (int i = 0; i < list.size(); i++) {
-				// ½¨Á¢ÊäÈëÁ÷
+				// å»ºç«‹è¾“å…¥æµ
 				Object obj = ois.readObject();
 				CXFreturnResult cxfResult = (CXFreturnResult) obj;
 				String dataId = cxfResult.getDataId();
@@ -115,7 +115,7 @@ public class STlistClient {
 	public static void main(String args[]) throws ClassNotFoundException,
 			IOException {
 
-		// Æô¶¯·şÎñ¶Ë
+		// å¯åŠ¨æœåŠ¡ç«¯
 		STlistClient server = new STlistClient();
 		server.start();
 
