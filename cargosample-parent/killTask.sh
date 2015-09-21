@@ -2,7 +2,10 @@ b=`ps -ef | grep tomcat | grep -v 'tomcat-jenkins' | grep -v 'grep'|wc -l`
 if [ $b \> 0  ]
 then
         kill -9 `ps -ef | grep tomcat | grep -v 'tomcat-jenkins' | grep -v 'grep'|awk '{print $2}'`
-        rm -rf /usr/ffg_server/apache-tomcat-6.0.44-2/webapps/SocketClient
+        rm -rf /usr/ffg_server/apache-tomcat-6.0.44-2/webapps/SocketClient*
+        rm -rf /usr/ffg_server/apache-tomcat-6.0.44-2/webapps/web*
+        rm -rf /usr/ffg_server/apache-tomcat-6.0.44/webapps/web*
+         rm -rf /usr/ffg_server/apache-tomcat-6.0.44-3/webapps/web*
 else
         echo "No tomcats need to be killed"
 fi
