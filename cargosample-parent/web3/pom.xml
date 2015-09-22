@@ -21,7 +21,13 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
- <build>
-    <finalName>web3</finalName>
-  </build>
+  <build>
+        <finalName>web3</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
