@@ -72,7 +72,7 @@ public class STlistServer {
 				}
 				
 			}
-			ss = new ServerSocket(10801);
+			ss = new ServerSocket(7777);
 			System.out.println("start to accept...");
 
 		} catch (IOException e) {
