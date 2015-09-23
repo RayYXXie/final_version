@@ -34,7 +34,7 @@ public class STlistClient {
 		ObjectOutputStream oos = null;
 		Socket socket = null;
 		try {
-			socket = new Socket("127.0.0.1", 10801);
+			socket = new Socket("127.0.0.1", 7777);
 			socket.setSoTimeout(1800000);
 
 			// 从数据库取出所有的原生对象
