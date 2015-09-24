@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e15e461f-b552-4837-b167-852fa20a9af9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<parameter name="Query_USER_SQL" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR1" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Query_USER_SQL_1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR2" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Query_USER_SQL_2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[$P!{Query_USER_SQL}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dataid" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="account" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="msgtype" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="transacttime" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="onbehalfofcompid" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="modifytime" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="TEST_NULL" class="java.lang.String">
+		<variableExpression><![CDATA["".equals($F{account})||null.equals($F{account})?"N/A":$F{account}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="34" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="138" height="25" uuid="43eadf67-5d2b-4ba1-b7a0-26525a3462e3"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="138" y="0" width="138" height="25" uuid="0bd827ad-0d73-420e-8721-34e115334675"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="276" y="0" width="138" height="25" uuid="84328ac9-f940-4355-8fdd-e410a2b751fb"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="414" y="0" width="138" height="25" uuid="046f18bd-456c-4e58-914d-af592a844864"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="138" height="25" uuid="6aaf4bd5-f802-49e6-8565-692f9d82c13e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="1" width="138" height="24" uuid="7b5905ea-6026-4b08-aa01-b29311d90d6f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[account]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="1" width="138" height="24" uuid="017080c9-d578-46ba-b366-5fcc8a48738d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[dataid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="138" height="25" uuid="1c290edc-6a72-4b2c-b173-42cd580fafdc"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[msgtype]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="138" height="20" uuid="21d9e3c0-3331-49f4-ae23-d07a39eda725"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="276" y="0" width="138" height="20" uuid="f22aea0f-dc69-4185-ad3c-1df504d5aced"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="414" y="0" width="138" height="20" uuid="1b1b2f6e-2990-4497-a880-e8dc7583e972"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="138" y="0" width="138" height="20" uuid="e6536fc7-7230-40e4-8bad-22de8cc6a3d1"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="138" height="20" uuid="a0664a37-f542-479b-bcb9-fb4c3bfd9d14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="138" height="20" uuid="63397deb-6c70-48a9-9be9-e107039e3b72"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{msgtype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="138" height="20" uuid="826ae3b7-49b8-450b-993d-ed9f38df2be8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{TEST_NULL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="0" width="138" height="20" uuid="c470d057-54ec-41bb-83db-50f2b343f658"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dataid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="100">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="100" uuid="c96a65dc-8e7d-4212-bea1-b42fbe0d8a1e"/>
+				<subreportParameter name="Query_USER_SQL_2">
+					<subreportParameterExpression><![CDATA[$P{Query_USER_SQL_2}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR2}]]></subreportExpression>
+			</subreport>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="100" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="100" uuid="e840b9ad-ce5d-4f50-800f-d9fdf7cabbc2"/>
+				<subreportParameter name="Query_USER_SQL_1">
+					<subreportParameterExpression><![CDATA[$P{Query_USER_SQL_1}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR1}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>
