@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport3" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="3a9467b5-4289-4ab3-86ca-0acc2ef66a74">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Query_USER_SQL_3" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[$P!{Query_USER_SQL_3}]]>
+	</queryString>
+	<field name="expectedvalue" class="java.lang.String"/>
+	<field name="actuallyvalue" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="139" y="13" width="142" height="20" uuid="7642d183-8db2-40b5-9e63-c6a1dbc111f7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{expectedvalue}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="13" width="100" height="20" uuid="b2110641-89d1-426a-95d4-80b1867c734c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{actuallyvalue}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="13" width="100" height="20" uuid="180936d7-e818-4261-9ef4-0b0d7e49ad40"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXPRECT：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="13" width="100" height="20" uuid="27ca0bcb-106a-424b-9f19-f7657dcaedb5"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTUALLY：]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
