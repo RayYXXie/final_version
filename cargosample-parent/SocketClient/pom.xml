@@ -82,8 +82,8 @@
 				<includes>
 					<include>*.properties</include>
 					<include>*.sh</include>
-					<include>*.jrxml</include>
-					<include>*.jasper</include>
+					<include>ireportfile/*.jrxml</include>
+					<include>ireportfile/*.jasper</include>
 				</includes>
 			</resource>
 		</resources>
