@@ -1,3 +1,4 @@
+package ffg;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
