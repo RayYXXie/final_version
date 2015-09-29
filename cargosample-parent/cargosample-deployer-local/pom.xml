@@ -40,13 +40,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
-		<dependency>
-			<groupId>com.fb.ffg</groupId>
-			<artifactId>STsocketClient</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<type>war</type> 
-		</dependency>
-  </dependencies>
+		  </dependencies>
   <build>
 		<plugins>
 			<plugin>
@@ -98,14 +92,7 @@
 								 <context>/web3</context>
 								 </properties>
 							</deployable>
-							<deployable>
-								 <groupId>com.fb.ffg</groupId> 
-								 <artifactId>STsocketClient</artifactId>
-								 <type>war</type>
-								 <properties>
-								 <context>/STsocketClient</context>
-								 </properties>
-							</deployable>
+							
 						</deployables>
 					</deployer>
 				</configuration>

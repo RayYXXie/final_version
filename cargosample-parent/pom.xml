@@ -15,9 +15,6 @@
     <module>web4</module>
     <module>web5</module>
     <module>entry</module>
-    <module>STsocketServer</module>
-    <module>STsocketClient</module>
-    <module>SocketServer</module>
     <module>SocketClient</module>
     <module>cargosample-deployer-local3</module>
   </modules>
