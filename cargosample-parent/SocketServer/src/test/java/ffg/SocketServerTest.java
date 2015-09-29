@@ -29,7 +29,7 @@ public class SocketServerTest {
 	static boolean FLAG = true;
     static int controlcount=0;
 	@Test
-	public void start() throws Exception {
+	public void test1() throws Exception {
 		
 		ServerSocket ss = null;
 		DataBaseMethodHandler dataHandler = new DataBaseMethodHandlerImpl();
