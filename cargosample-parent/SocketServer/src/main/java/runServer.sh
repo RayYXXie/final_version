@@ -93,6 +93,5 @@ do
 done
 	
 echo "all webapp is started"
-cd /root/.jenkins/workspace/final_version/cargosample-parent/SocketServer
-mvn clean cobertura:cobertura
+
 
