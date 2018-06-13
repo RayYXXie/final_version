@@ -46,7 +46,9 @@ public class CommonUtils {
 			String value = e.getValue();
 			//Assert.assertEquals(value, "1");
 			value = value.equals("1")?"鎴愬姛":"澶辫触";
-			logger.info("caseId = "+key+"鐨凜ase鍏舵祴璇曠粨鏋滀负:"+value);    
+			logger.info("caseId = "+key+"鐨凜ase鍏舵祴璇曠粨鏋滀负:"+value); 
+			logger.info("caseId = "+key+"鐨凜ase鍏舵祴璇曠粨鏋滀负:"+value); 
+			
 		}
 
 	}
