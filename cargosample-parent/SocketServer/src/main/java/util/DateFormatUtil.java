@@ -17,5 +17,7 @@ public class DateFormatUtil {
 	public static void main(String args []){
 		
 		System.out.println(DateFormatUtil.getFormatNowTime("yyyy-MM-DD hh:MM:ss"));
+		System.out.println(DateFormatUtil.getFormatNowTime("yyyy-MM-DD hh:MM:ss"));
+		
 	}
 }
