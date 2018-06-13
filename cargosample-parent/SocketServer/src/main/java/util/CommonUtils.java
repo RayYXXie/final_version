@@ -46,7 +46,7 @@ public class CommonUtils {
 			String value = e.getValue();
 			//Assert.assertEquals(value, "1");
 			value = value.equals("1")?"成功":"失败";
-			logger.info("caseId 为"+key+"的Case其测试结果为:"+value);
+			logger.info("caseId = "+key+"的Case其测试结果为:"+value);
 		}
 
 	}
