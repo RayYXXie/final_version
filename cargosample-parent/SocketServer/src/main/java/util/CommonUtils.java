@@ -16,7 +16,7 @@ public class CommonUtils {
 		
 
 	/**
-	 * 初始化case成功状态Map value 默认置为1（成功）
+	 * 鍒濆鍖朿ase鎴愬姛鐘舵�丮ap value 榛樿缃负1锛堟垚鍔燂級
 	 * 
 	 * @param list
 	 * @param map
@@ -34,7 +34,7 @@ public class CommonUtils {
 	}
 
 	/**
-	 * 将最终的结果打印到log4j的日志文件中
+	 * 灏嗘渶缁堢殑缁撴灉鎵撳嵃鍒發og4j鐨勬棩蹇楁枃浠朵腑
 	 * @param map
 	 * @param logger
 	 */
@@ -45,8 +45,10 @@ public class CommonUtils {
 			String key = e.getKey();
 			String value = e.getValue();
 			//Assert.assertEquals(value, "1");
-			value = value.equals("1")?"成功":"失败";
-			logger.info("caseId = "+key+"的Case其测试结果为:"+value);    
+			value = value.equals("1")?"鎴愬姛":"澶辫触";
+			logger.info("caseId = "+key+"鐨凜ase鍏舵祴璇曠粨鏋滀负:"+value);    
+			logger.info("caseId is "+key+"鐨凜ase鍏舵祴璇曠粨鏋滀负:"+value);    
+			
 		}
 
 	}
